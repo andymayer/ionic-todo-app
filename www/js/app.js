@@ -5,6 +5,18 @@
 // the 2nd parameter is an array of 'requires'
 angular.module('todo', ['ionic'])
 
+.config(['$ionicAppProvider', function($ionicAppProvider) {
+  // Identify app
+  $ionicAppProvider.identify({
+    // The App ID (from apps.ionic.io) for the server
+    app_id: '546931ce',
+    // The public API key all services will use for this app
+    api_key: '808dcbe8243e2e3be5e21644a5c1842d3eb3192e12934d7e',
+    // The GCM project ID (project number) from your Google Developer Console (un-comment if used)
+    // gcm_id: 'YOUR_GCM_ID'
+  });
+}])
+
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
